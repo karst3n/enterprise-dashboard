@@ -830,3 +830,55 @@ day. The “timestamp” attribute shows when the data was collected.
 | etl_created             | timestamp            | Displays when this    |
 |                         |                      | data set was created  |
 +-------------------------+----------------------+-----------------------+
+
+Business.reserved_packages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This table contains reserved package information associated with subscriptions.  
+It reflects reserved quantities, validity periods, and assigned product descriptions.  
+This dataset can be used in dashboards and reports to monitor contractually reserved usage limits  
+and associated package metadata (like start/end dates and expiration of buckets).
+
++----------------------------+----------------------+---------------------------------------------+
+| Field name                 | Data type            | Description                                 |
++============================+======================+=============================================+
+| key_id                     | varchar              | Unique identifier for the reserved package. |
++----------------------------+----------------------+---------------------------------------------+
+| subscription_id            | varchar              | Identifier of the subscription.             |
++----------------------------+----------------------+---------------------------------------------+
+| subscription_status        | varchar              | Current status of the subscription.         |
++----------------------------+----------------------+---------------------------------------------+
+| subscription_start_date    | date                 | Start date of the subscription.             |
++----------------------------+----------------------+---------------------------------------------+
+| subscription_end_date      | date                 | End date of the subscription.               |
++----------------------------+----------------------+---------------------------------------------+
+| subscription_effective_since | date               | Effective date of the current subscription. |
++----------------------------+----------------------+---------------------------------------------+
+| subscription_next_effective_since | date         | Date when the next subscription becomes effective. |
++----------------------------+----------------------+---------------------------------------------+
+| subscription_changed_at    | timestamp            | Timestamp of the last subscription change.  |
++----------------------------+----------------------+---------------------------------------------+
+| product_name               | varchar              | Name of the associated product.             |
++----------------------------+----------------------+---------------------------------------------+
+| quantity                   | int4                 | Quantity reserved in the package.           |
++----------------------------+----------------------+---------------------------------------------+
+| price                      | numeric(10,2)        | Reserved price for the package.             |
++----------------------------+----------------------+---------------------------------------------+
+| bucket_id                  | varchar              | ID of the assigned usage bucket.            |
++----------------------------+----------------------+---------------------------------------------+
+| filling_quantity           | varchar              | Quantity already filled in the bucket.      |
++----------------------------+----------------------+---------------------------------------------+
+| limit_quantity             | numeric(10,2)        | Maximum quantity allowed in the bucket.     |
++----------------------------+----------------------+---------------------------------------------+
+| bucket_type                | varchar              | Type of the bucket (e.g. fixed, flexible).  |
++----------------------------+----------------------+---------------------------------------------+
+| bucket_start_date          | date                 | Start date of the bucket validity.          |
++----------------------------+----------------------+---------------------------------------------+
+| bucket_end_date            | date                 | End date of the bucket validity.            |
++----------------------------+----------------------+---------------------------------------------+
+| bucket_exp_date            | date                 | Expiration date of the bucket.              |
++----------------------------+----------------------+---------------------------------------------+
+| contract                   | int8                 | ID of the associated contract.              |
++----------------------------+----------------------+---------------------------------------------+
+| product_description        | varchar              | Description of the reserved product.        |
++----------------------------+----------------------+---------------------------------------------+
